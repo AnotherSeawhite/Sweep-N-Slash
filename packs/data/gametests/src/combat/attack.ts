@@ -291,6 +291,7 @@ export class CombatManager {
                     setExhaustion(player, exhaustion + 0.1);
                 }
                 if (
+                    stats &&
                     !(beforeEffect as any)?.cancelDurability &&
                     targetStats?.damageItem !== false
                 ) {
