@@ -32,8 +32,8 @@ This project uses [Regolith](https://github.com/Bedrock-OSS/regolith) as its bui
 | Tool                                                         | Purpose                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------- |
 | [Regolith](https://github.com/Bedrock-OSS/regolith/releases) | Build pipeline runner                                         |
-| [Node.js](https://nodejs.org/)                               | Required by the `gametests` filter for TypeScript compilation |
-| [Deno](https://deno.com/)                                    | Required by the `marathon` and `shush` filters (from Azurite) |
+| [Node.js](https://nodejs.org/)                               | Required by the [`gametests`](https://github.com/Bedrock-OSS/regolith-filters/tree/master/gametests) filter for TypeScript compilation |
+| [Deno](https://deno.com/)                                    | Required by the [`marathon`](https://github.com/azurite-bedrock/regolith-filters/tree/main/marathon), [`shush`](https://github.com/azurite-bedrock/regolith-filters/tree/main/shush) and [`parcel`](https://github.com/azurite-bedrock/regolith-filters/tree/main/parcel) filters (from Azurite) |
 
 ## Setup
 
