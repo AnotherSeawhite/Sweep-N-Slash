@@ -14,24 +14,12 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - name: Get latest Bedrock server URL
-              id: url
-              run: |
-                  PAGE=$(curl -fsSL \
-                    -H "Accept-Language: en-US,en" \
-                    -A "Mozilla/5.0 (X11; Linux x86_64)" \
-                    "https://www.minecraft.net/en-us/download/server/bedrock")
-                  URL=$(echo "$PAGE" | grep -oP 'https://minecraft\.azureedge\.net/bin-linux/bedrock-server-[\d.]+\.zip' | head -1)
-                  [ -n "$URL" ] || { echo "::error::Could not find server download URL"; exit 1; }
-                  echo "url=$URL" >> "$GITHUB_OUTPUT"
-                  echo "Found: $URL"
+            - uses: denoland/setup-deno@v2
+              with:
+                  deno-version: v2.x
 
-            - name: Extract player.json
-              run: |
-                  curl -fsSL "${{ steps.url.outputs.url }}" -o server.zip
-                  # behavior_packs/vanilla (no version suffix) is always the current pack
-                  unzip -p server.zip "behavior_packs/vanilla/entities/player.json" \
-                    > vanilla_data/bp/entities/player.json
+            - name: Fetch latest player.json
+              run: deno run --allow-net --allow-write scripts/update-vanilla-data.ts
 
             - name: Format with Prettier
               run: npx --yes prettier --write vanilla_data/
