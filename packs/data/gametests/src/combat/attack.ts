@@ -187,14 +187,16 @@ export class CombatManager {
                 });
             }
             const dim = player.dimension;
-            for (const s of sounds) {
-                dim.playSound(s.id, loc2, s.soundOptions);
-            }
-            if (sprintKB) {
-                dim.playSound(Sounds.EntityPlayerAttackKnockback, loc2, {
-                    volume: 0.7,
-                });
-            }
+            system.run(() => {
+                for (const s of sounds) {
+                    dim.playSound(s.id, loc2, s.soundOptions);
+                }
+                if (sprintKB) {
+                    dim.playSound(Sounds.EntityPlayerAttackKnockback, loc2, {
+                        volume: 0.7,
+                    });
+                }
+            });
         };
 
         rawDamageMap.set(player.id, dmgResult.raw);
