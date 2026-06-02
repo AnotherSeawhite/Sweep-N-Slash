@@ -104,6 +104,7 @@ export function configForm(player: Player): void {
             { translate: 'sweepnslash.config.personal.indicator.hotbar' },
             { translate: 'sweepnslash.config.personal.indicator.geyser' },
             { translate: 'sweepnslash.config.personal.indicator.none' },
+            { translate: 'sweepnslash.config.personal.indicator.actionbar' },
         ],
         {
             defaultValueIndex: dp(player, { id: 'cooldownStyle' }),

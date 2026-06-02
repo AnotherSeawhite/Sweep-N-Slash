@@ -39,6 +39,7 @@ sweepnslash.config.personal.indicator.crosshair=Crosshair
 sweepnslash.config.personal.indicator.hotbar=Hotbar
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=None
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Bow Hit Sound
 sweepnslash.config.personal.sweep.particles=Sweep Particles
 sweepnslash.config.personal.enchanted.particles=Enchanted Hit Particles

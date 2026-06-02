@@ -39,6 +39,7 @@ sweepnslash.config.personal.indicator.crosshair=십자선
 sweepnslash.config.personal.indicator.hotbar=단축 바
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=비활성화
+sweepnslash.config.personal.indicator.actionbar=액션 바
 sweepnslash.config.personal.bowhitsound=화살 명중 효과음
 sweepnslash.config.personal.sweep.particles=휩쓸기 공격 입자
 sweepnslash.config.personal.enchanted.particles=마법 부여 공격 입자

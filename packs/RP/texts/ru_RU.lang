@@ -39,6 +39,7 @@ sweepnslash.config.personal.indicator.crosshair=Крестик
 sweepnslash.config.personal.indicator.hotbar=Хотбар
 sweepnslash.config.personal.indicator.geyser=Гейзер
 sweepnslash.config.personal.indicator.none=Без индекатора
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Звук при попадании с лука
 sweepnslash.config.personal.sweep.particles=Партиклы разрезов
 sweepnslash.config.personal.enchanted.particles=Партиклы зачарованных атак

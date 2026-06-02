@@ -39,6 +39,7 @@ sweepnslash.config.personal.indicator.crosshair=Tâm
 sweepnslash.config.personal.indicator.hotbar=Thanh Công Cụ
 sweepnslash.config.personal.indicator.geyser=Kiểu Bedrock
 sweepnslash.config.personal.indicator.none=Không có
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Âm Thanh Khi Bắn Cung Trúng Mục Tiêu
 sweepnslash.config.personal.sweep.particles=Hiệu Ứng Quét Cạnh
 sweepnslash.config.personal.enchanted.particles=Hiệu Ứng Khi Trúng Bằng Vũ Khí Phù Phép

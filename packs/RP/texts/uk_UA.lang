@@ -35,6 +35,7 @@ sweepnslash.config.personal.indicator.crosshair=Приціл
 sweepnslash.config.personal.indicator.hotbar=Hotbar
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Немає
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Звук Влучання Лука
 sweepnslash.config.personal.sweep.particles=Частинки Замаху
 sweepnslash.config.personal.enchanted.particles=Частинки Зачарованого Удару

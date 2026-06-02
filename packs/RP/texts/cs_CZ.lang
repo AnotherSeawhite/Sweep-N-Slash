@@ -35,6 +35,7 @@ sweepnslash.config.personal.indicator.crosshair=Zaměřovač
 sweepnslash.config.personal.indicator.hotbar=Panel akcí
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Žádný
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Zvuk zásahu lukem
 sweepnslash.config.personal.sweep.particles=Částice rozsahu útoku
 sweepnslash.config.personal.enchanted.particles=Částice okouzleného zásahu

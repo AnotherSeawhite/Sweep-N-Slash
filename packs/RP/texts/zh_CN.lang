@@ -39,6 +39,7 @@ sweepnslash.config.personal.indicator.crosshair=十字准星下
 sweepnslash.config.personal.indicator.hotbar=快捷栏旁
 sweepnslash.config.personal.indicator.geyser=Geyser模式
 sweepnslash.config.personal.indicator.none=无
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=弓箭命中音效
 sweepnslash.config.personal.sweep.particles=横扫粒子
 sweepnslash.config.personal.enchanted.particles=附魔武器攻击粒子

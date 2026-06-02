@@ -35,6 +35,7 @@ sweepnslash.config.personal.indicator.crosshair=Hårkors
 sweepnslash.config.personal.indicator.hotbar=Hotbar
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Ingen
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Bågträffljud
 sweepnslash.config.personal.sweep.particles=Svepattack-partiklar
 sweepnslash.config.personal.enchanted.particles=Förtrollad träff-partiklar

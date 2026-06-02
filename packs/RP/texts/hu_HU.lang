@@ -35,6 +35,7 @@ sweepnslash.config.personal.indicator.crosshair=Célkereszt
 sweepnslash.config.personal.indicator.hotbar=Eszköztár
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Nincs
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Íj találati hang
 sweepnslash.config.personal.sweep.particles=Söprő csapás részecskék
 sweepnslash.config.personal.enchanted.particles=Varázslatos találat részecskék

@@ -39,6 +39,7 @@ sweepnslash.config.personal.indicator.crosshair=Reticul
 sweepnslash.config.personal.indicator.hotbar=Bară de acțiune
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Fără
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Sunet lovire arc
 sweepnslash.config.personal.sweep.particles=Particule sfâșiere
 sweepnslash.config.personal.enchanted.particles=Particule lovitură fermecată

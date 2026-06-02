@@ -35,6 +35,7 @@ sweepnslash.config.personal.indicator.crosshair=Mirino
 sweepnslash.config.personal.indicator.hotbar=Barra degli strumenti
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Nessuno
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Suono di colpo con l'arco
 sweepnslash.config.personal.sweep.particles=Particelle di sweep
 sweepnslash.config.personal.enchanted.particles=Particelle di colpo incantato

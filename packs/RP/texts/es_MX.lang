@@ -35,6 +35,7 @@ sweepnslash.config.personal.indicator.crosshair=Punto de mira
 sweepnslash.config.personal.indicator.hotbar=Barra de acceso rápido
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Ninguno
+sweepnslash.config.personal.indicator.actionbar=Action Bar
 sweepnslash.config.personal.bowhitsound=Sonido de impacto de arco
 sweepnslash.config.personal.sweep.particles=Partículas de barrido
 sweepnslash.config.personal.enchanted.particles=Partículas de golpe encantado

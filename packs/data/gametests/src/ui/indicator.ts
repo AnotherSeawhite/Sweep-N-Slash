@@ -10,6 +10,12 @@ export function tickIndicator(player: Player, currentTick: number, addonToggle: 
     const status = getStatus(player);
     const { item, stats } = getItemStats(player);
 
+    const barStyle = (player.getDynamicProperty('cooldownStyle') as number) ?? 0;
+    const barArray = ['crs', 'htb', 'sub', 'non', 'non'][barStyle];
+
+    let indicatorText = '˙';
+    if (barStyle === 4) indicatorText = '_';
+
     // Cooldown UI
     const maxCD = getCooldownTime(player, stats?.attackSpeed).ticks;
     status.cooldown = Math.max(0, status.lastAttackTime + maxCD - currentTick);
@@ -25,8 +31,8 @@ export function tickIndicator(player: Player, currentTick: number, addonToggle: 
 
     const subGrey = Math.round(uiPixelValue / 1.6);
     const subDarkGrey = 10 - subGrey;
-    let cooldownSubtitle = '§7˙'.repeat(Math.max(0, subGrey));
-    cooldownSubtitle += '§8˙'.repeat(subDarkGrey);
+    let cooldownSubtitle = ('§7' + indicatorText).repeat(Math.max(0, subGrey));
+    cooldownSubtitle += ('§8' + indicatorText).repeat(subDarkGrey);
 
     const inRange = view(player, stats?.reach);
     const targetValid = !(inRange?.getComponent('health')?.currentValue! <= 0);
@@ -38,46 +44,59 @@ export function tickIndicator(player: Player, currentTick: number, addonToggle: 
     const ridingCheck = ridingOn !== inRange;
 
     const viewCheck = inRange && targetValid && !riderCheck && ridingCheck;
+    const hitReady = viewCheck && curCD <= 0;
 
-    const barStyle = (player.getDynamicProperty('cooldownStyle') as number) ?? 0;
-    const barArray = ['crs', 'htb', 'sub', 'non'][barStyle];
-    const bonkReady = viewCheck && curCD <= 0;
+    const clearIndicator = () => {
+        if (barStyle === 4) {
+            player.onScreenDisplay.setActionBar(' ');
+        } else {
+            player.onScreenDisplay.setTitle('_sweepnslash:non', {
+                fadeInDuration: 0,
+                fadeOutDuration: 0,
+                stayDuration: 0,
+            });
+        }
+    };
 
     if (!addonToggle || barStyle === 3) {
         if (status.showBar) {
-            player.onScreenDisplay.setTitle('_sweepnslash:non', {
-                fadeInDuration: 0,
-                fadeOutDuration: 0,
-                stayDuration: 0,
-            });
+            clearIndicator();
             status.showBar = false;
         }
-    } else {
-        status.showBar = true;
-        if (
-            curCD > 0 ||
-            (viewCheck && stats && !hasItemFlag(player, 'hide_indicator') && barStyle === 0)
-        ) {
-            barStyle !== 2
-                ? player.onScreenDisplay.setTitle(
-                      `_sweepnslash:${barArray}:${bonkReady ? 't' : 'f'}:${uiPixelValue}`,
-                      { fadeInDuration: 0, fadeOutDuration: 0, stayDuration: 0 },
-                  )
-                : player.onScreenDisplay.setTitle(' ', {
-                      fadeInDuration: 0,
-                      fadeOutDuration: 0,
-                      stayDuration: 10,
-                      subtitle: `${cooldownSubtitle}`,
-                  });
-            status.attackReady = false;
-        } else if (curCD <= 0 && status.attackReady == false) {
-            player.onScreenDisplay.setTitle('_sweepnslash:non', {
-                fadeInDuration: 0,
-                fadeOutDuration: 0,
-                stayDuration: 0,
-            });
-            status.attackReady = true;
+        return;
+    }
+
+    status.showBar = true;
+
+    const displayIndicator =
+        curCD > 0 ||
+        (barStyle === 0 && viewCheck && stats && !hasItemFlag(player, 'hide_indicator'));
+
+    if (displayIndicator) {
+        switch (barStyle) {
+            case 0:
+            case 1:
+                player.onScreenDisplay.setTitle(
+                    `_sweepnslash:${barArray}:${hitReady ? 't' : 'f'}:${uiPixelValue}`,
+                    { fadeInDuration: 0, fadeOutDuration: 0, stayDuration: 0 },
+                );
+                break;
+            case 2:
+                player.onScreenDisplay.setTitle(' ', {
+                    fadeInDuration: 0,
+                    fadeOutDuration: 0,
+                    stayDuration: 10,
+                    subtitle: `${cooldownSubtitle}`,
+                });
+                break;
+            default:
+                player.onScreenDisplay.setActionBar(`${cooldownSubtitle}`);
+                break;
         }
+        status.attackReady = false;
+    } else if (curCD <= 0 && !status.attackReady) {
+        clearIndicator();
+        status.attackReady = true;
     }
 
     if (addonToggle && Debug.isEnabled()) {
